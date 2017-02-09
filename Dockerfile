@@ -1,4 +1,8 @@
-FROM kibana:4.6.3
+FROM kibana:5.2.0
 
-RUN kibana plugin -i logtrail -u https://github.com/sivasamyk/logtrail/releases/download/0.1.7/logtrail-4.x-0.1.7.tar.gz
+RUN kibana-plugin install https://github.com/sivasamyk/logtrail/releases/download/0.1.8/logtrail-5.2.0-0.1.8.zip
+
+RUN mkdir /config && \
+    mv /usr/share/kibana/plugins/logtrail/logtrail.json /config/logtrail.json && \
+    ln -s /config/logtrail.json /usr/share/kibana/plugins/logtrail/logtrail.json
 
