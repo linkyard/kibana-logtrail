@@ -1,6 +1,6 @@
 {
   "es": {
-    "default_index": "syslog-*",
+    "default_index": "graylog*",
     "allow_url_parameter": false,
     "timezone": "UTC"
   },
@@ -12,8 +12,8 @@
     "mapping" : {
         "timestamp" : "@timestamp",
         "display_timestamp" : "timestamp",
-        "host" : "host",
-        "program": "program",
+        "host" : "k8s-namespace",
+        "program": "k8s-pod",
         "message": "message"
     }
   }
